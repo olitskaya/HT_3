@@ -27,12 +27,10 @@ def perevirka(a):
             if x.isdigit() == True:
                 z = int(x)
                 sum = sum + z
-        print('Сума всіх чисел: ', sum)
+        print('Сума всіх цифр: ', sum)
         b = ''  
         for c in a:  
-            if c in ('q','w','e','r','t','y','u','i','o','p',
-                        'a','s','d','f','g','h','j','k','l',
-                        'z','x','c','v','b','n','m'):  
+            if c.isalpha():  
                 b = b + c
         print('Рядок без цифр і символів: ', b)        
     if dovzhyna > 50 :
