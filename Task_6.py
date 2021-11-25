@@ -14,9 +14,13 @@ def perevirka(a):
     dovzhyna = len(a)
     if 29 < dovzhyna < 51 :
         print('Довжина рядка: ', len(a))
-        num = [int(i) for i in a if i.isdigit()]
-        print('Кількість цифр:', len(num))
-        print('Кількість букв: ', len(a) - len(num))
+        d = {'Букви': 0, 'Цифри': 0}
+        for i in a:
+            if i.isalpha():
+                d['Букви'] += 1
+            if i.isdigit():
+                d['Цифри'] += 1
+        print('Кількість цифр: ', d['Цифри'], 'Кількість букв: ', d['Букви'])
     if dovzhyna < 30:
         sum = 0
         for x in a:
@@ -26,9 +30,11 @@ def perevirka(a):
         print('Сума всіх чисел: ', sum)
         b = ''  
         for c in a:  
-            if c not in ('0','1','2','3','4','5','6','7','8','9'):  
+            if c in ('q','w','e','r','t','y','u','i','o','p',
+                        'a','s','d','f','g','h','j','k','l',
+                        'z','x','c','v','b','n','m'):  
                 b = b + c
-        print('Рядок без цифр: ', b)        
+        print('Рядок без цифр і символів: ', b)        
     if dovzhyna > 50 :
         print('Гарного дня!')
     return
